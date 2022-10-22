@@ -1,0 +1,16 @@
+class Solution {
+    func searchInsert(_ nums: [Int], _ target: Int) -> Int {
+        
+        var place = 0
+        
+        for i in 0...nums.count-1{
+            if target > nums[i]{
+                place = i+1
+                
+                
+            }
+        }
+        
+        return place
+    }
+}
