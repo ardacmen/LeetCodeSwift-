@@ -1,0 +1,36 @@
+class Solution {
+    func singleNumber(_ nums: [Int]) -> Int {
+        
+        if nums.count==1{
+            return nums[nums.count-1]
+        }else{
+            
+            var checker = 0
+            
+            for i in 0...nums.count-1{
+                
+                for j in 0...nums.count-1{
+                    
+                    if nums[i] == nums[j]{
+                        checker = checker + 1
+                       
+                    }
+                    if checker != 0 && checker != 1 {
+                        checker = 0
+                    }
+                }
+                
+                if checker == 1{
+                    
+                    return nums[i]
+                }
+                
+            }
+            
+        }
+        
+      
+        return 1
+        
+    }
+}
