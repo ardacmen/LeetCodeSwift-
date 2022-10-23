@@ -1,0 +1,33 @@
+class Solution {
+    func isPalindrome(_ x: Int) -> Bool {
+        
+        var chars = [String]()
+     
+        
+        for i in String(x){
+          chars.append(String(i))
+        }
+       
+            
+            let range = chars.count
+            
+            for i in 0...range-1{
+                
+                if(chars[i]==chars[range-1-i]){
+                    
+                    
+                    
+                }else{
+                    
+                    return false
+                    
+                }
+                
+            }
+            
+        
+    
+        return true
+        
+    }
+}
