@@ -1,0 +1,74 @@
+class Solution {
+    func isPalindrome(_ s: String) -> Bool {
+        
+        
+        var lowerCased = [String]()
+        var clean = [String]()
+        
+        
+        if s == ""{
+            return true
+        }else{
+            
+            
+        for i in s{
+            
+            lowerCased.append(i.lowercased())      
+            
+        }    
+        
+        for i in lowerCased{
+            
+            
+          if   ( Character(i).utf8[Character(i).utf8.startIndex] > 96 &&        Character(i).utf8[Character(i).utf8.startIndex] < 123 )
+            {
+                
+            
+                   clean.append(i)
+                 
+             }else if     Character(i).utf8[Character(i).utf8.startIndex] > 47 &&        Character(i).utf8[Character(i).utf8.startIndex] < 58 {
+                   clean.append(i)
+                 
+             }
+                
+              
+                
+            }
+                  
+            
+        }
+                       
+       
+
+         let range = clean.count
+            
+        if range == 0 {
+            return true 
+        }else{
+            
+               for i in 0...range-1{
+                
+                if(clean[i]==clean[range-1-i]){
+                    
+                    
+                    
+                }else{
+                    
+                    return false
+                    
+                }
+                
+            }
+            
+        }
+            
+        
+        print(clean)
+    
+        return true
+        
+       
+       
+      
+    }
+}
