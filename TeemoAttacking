@@ -1,0 +1,76 @@
+class Solution {
+    func findPoisonedDuration(_ timeSeries: [Int], _ duration: Int) -> Int {
+        
+        
+        var counter = [Int]()
+        
+        for i in 0...timeSeries.count-1{
+            
+           
+                
+               
+                   
+                   counter.append(timeSeries[i])
+                 
+                   for j in 1...duration-1{
+                       
+                       counter.append(timeSeries[i]+j)
+                       
+                   }
+                        
+            
+        }
+        
+        
+        
+       var uniqueArray = [Int]()
+       var checker = 0
+       
+        
+        for i in 0...counter.count-1{
+            
+            for j in 0...counter.count-1{
+                
+                if (counter[i] == counter[j]){
+                    
+                    checker = checker+1
+                }
+                
+            }
+            
+            if checker == 1 {
+                
+                uniqueArray.append(counter[i])
+                
+            }
+            checker = 0
+            
+        }
+        
+        
+        var checker2 = 0
+         for j in timeSeries{
+            
+            for i in uniqueArray{
+                
+              if j == i {
+                  
+                  checker2 = checker2 + 1
+                  
+              }
+                
+            }
+            if checker2 == 0 {
+                
+                uniqueArray.append(j)
+                
+            }
+            checker2 = 0
+            
+        }
+        
+       
+        return uniqueArray.count
+        
+    }
+}
