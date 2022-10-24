@@ -1,0 +1,46 @@
+class Solution {
+    func checkRecord(_ s: String) -> Bool {
+        
+        var absentChecker = 0
+        var lateChecker = 0
+        
+        for i in s{
+            
+            if  i == "A" {
+                absentChecker = absentChecker + 1
+            }
+            
+        }
+        
+        if absentChecker < 2 {
+            
+        var arr = [Character]()
+            
+        for i in s{
+            
+            arr.append(i)
+            
+        }
+            for i in 0...arr.count-3{
+                
+                if arr[i] == "L"{
+                    if arr[i+1] == "L"{
+                        if arr[i+2] == "L"{
+                            return false
+                        }
+                    }
+                }
+                
+            }
+            
+            
+        }else{
+            
+            
+            return false
+            
+            
+        }
+        return true
+    }
+}
