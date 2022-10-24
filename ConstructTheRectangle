@@ -1,0 +1,24 @@
+class Solution {
+    func constructRectangle(_ area: Int) -> [Int] {
+        
+       
+        
+        for l in 1...area/2{
+            
+            for w in 1...area/2{
+                
+                if l*w == area && l >= w{
+                                        
+                        return [l,w]
+                             
+                }
+                
+            }
+          
+        }
+        
+        
+        
+        return [area,1]
+    }
+}
