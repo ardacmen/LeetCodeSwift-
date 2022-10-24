@@ -1,0 +1,41 @@
+class Solution {
+    func isUgly(_ n: Int) -> Bool {
+        
+        
+        if n == 1{
+        return true
+        }else{
+            
+           for i in 2..<n{
+               
+               if(n%i == 0 ){
+                   
+                   if i == 2 || i == 3 || i == 5 {
+                       
+                       continue
+                       
+                   }else{
+                       
+                    if i%2 == 0 || i%3 == 0 || i%5 == 0 {
+                        
+                        continue
+                        
+                    }else{
+                        
+                        return false
+                        
+                    }
+                       
+                   }
+                   
+               }
+               
+           }
+            
+            
+        }
+        
+        return true 
+        
+    }
+}
